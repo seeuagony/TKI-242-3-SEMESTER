@@ -35,7 +35,7 @@ namespace miit::algebra {
         /**
         @brief Переносящий конструктор 
         */
-        Matrix(Matrix&& other) noexcept;  // ✅ Убрали const
+        Matrix(Matrix&& other) noexcept; 
 
         /**
         @brief Деструктор
@@ -144,7 +144,7 @@ namespace miit::algebra {
     }
 
     template<typename T>
-    Matrix<T>::Matrix(Matrix&& other) noexcept  // ✅ Без const
+    Matrix<T>::Matrix(Matrix&& other) noexcept 
         : data(other.data), size(other.size)
     {
         other.data = nullptr;
