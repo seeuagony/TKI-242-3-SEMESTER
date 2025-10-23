@@ -113,8 +113,7 @@ namespace miit::algebra {
         const T* getData() const;
     };
 
-    // ========== РЕАЛИЗАЦИЯ (внутри namespace!) ==========
-
+//реализация всего нужного
     template<typename T>
     Matrix<T>::Matrix() 
         : data(nullptr), size(0)
