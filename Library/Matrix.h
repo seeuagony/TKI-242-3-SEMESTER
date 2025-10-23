@@ -267,5 +267,4 @@ namespace miit::algebra {
     {
         return data;
     }
-
 }
