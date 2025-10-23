@@ -7,10 +7,8 @@
 using namespace miit::algebra;
 
 int main() {
-    Matrix<int> arr7(3);
-    int seven = 7;
-    ConstantGenerator gen(seven);
-    arr7.fill(gen);
+    Matrix<int> arr7(7);
+    arr7.fill(ConstantGenerator(7));
     std::cout << "До перемещения: " << arr7.toString() << "\n";
     Matrix<int> arr8 = std::move(arr7);
     std::cout << "После перемещения:\n";

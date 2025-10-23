@@ -89,6 +89,12 @@ namespace miit::algebra {
         void fill(Generator& gen);
 
         /**
+         * @brief Заполняет массив значениями из генератора 
+         * @param gen Генератор значений
+         */
+        void fill(Generator&& gen);
+
+        /**
          * @brief Преобразует массив в строку для вывода
          * @return представление массива как строки
          */
@@ -218,6 +224,14 @@ namespace miit::algebra {
 
     template<typename T>
     void Matrix<T>::fill(Generator& gen)
+    {
+        for (size_t i = 0; i < size; i++) {
+            data[i] = static_cast<T>(gen.generate());
+        }
+    }
+
+    template<typename T>
+    void Matrix<T>::fill(Generator&& gen)
     {
         for (size_t i = 0; i < size; i++) {
             data[i] = static_cast<T>(gen.generate());
