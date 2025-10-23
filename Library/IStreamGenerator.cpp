@@ -2,13 +2,9 @@
 
 namespace miit::algebra
 {
-    IStreamGenerator::IStreamGenerator(std::istream& in)
-        : in{in}
+    IStreamGenerator::IStreamGenerator(std::istream& in) : in{in}
     {
-        // Тело конструктора пустое - всё уже инициализировано
     }
-
-    // Реализация метода generate()
     int IStreamGenerator::generate()
     {
         int value = 0;
