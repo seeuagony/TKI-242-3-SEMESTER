@@ -21,12 +21,12 @@ namespace miit::algebra
 
     void Task1::task()
     {
-        std::cout << "Было: " << matrix.toString() << std::endl << std::endl;
+        std::cout << "Было: " << matrix.toString() << std::endl;
 
         int index = findLastMultipleOfThree();
 
         if (index == -1) {
-            std::cout << "После замены: " << "Элемент, кратный 3, не найден :(" << std::endl << std::endl;
+            std::cout << "После замены: " << "Элемент, кратный 3, не найден :(" << std::endl;
             return;
         }
         matrix[index] = 0;
