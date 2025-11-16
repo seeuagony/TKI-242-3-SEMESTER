@@ -5,7 +5,7 @@ namespace miit::algebra
 {
     Task2::Task2(Matrix<int>& matrix, Generator& gen, int k) : Exercise(matrix, gen), k(k) 
     {
-        std::cout << "Пункт 2" << std::endl << std::endl;
+        std::cout << "Пункт 2" << std::endl;
         matrix.fill(gen);
     }
 
