@@ -11,7 +11,7 @@ namespace miit::algebra
 
     int Task1::findLastMultipleOfThree()
     {
-        for (int i = matrix.getSize() - 1; i >= 0; i--) {
+        for (size_t i = matrix.getSize() - 1; i >= 0; i--) {
             if (matrix[i] != 0 && matrix[i] % 3 == 0) {
                 return i;
             }

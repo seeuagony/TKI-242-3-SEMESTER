@@ -10,6 +10,13 @@
 
 using namespace miit::algebra;
 
+enum class FillMethod {
+    RANDOM = 1,
+    MANUAL = 2,
+    CONSTANT = 3,
+    ZEROS = 4
+};
+
 int main() {
     std::cout << "Введите размер массива: ";
     size_t n;
@@ -20,10 +27,10 @@ int main() {
     }
 
     std::cout << "\nВыберите способ заполнения массива:\n";
-    std::cout << "  1 - Случайными числами\n";
-    std::cout << "  2 - Вручную (ввод с клавиатуры)\n";
-    std::cout << "  3 - Константой (одно и то же число)\n";
-    std::cout << "  4 - Нулями\n";
+    std::cout << "  " << static_cast<int>(FillMethod::RANDOM) << " - Случайными числами\n";
+    std::cout << "  " << static_cast<int>(FillMethod::MANUAL) << " - Вручную (ввод с клавиатуры)\n";
+    std::cout << "  " << static_cast<int>(FillMethod::CONSTANT) << " - Константой (одно и то же число)\n";
+    std::cout << "  " << static_cast<int>(FillMethod::ZEROS) << " - Нулями\n";
     std::cout << "Ваш выбор: ";
     
     int choice;
@@ -31,8 +38,8 @@ int main() {
 
     Generator* gen = nullptr;
     
-    switch (choice) {
-        case 1: {
+    switch (static_cast<FillMethod>(choice)) {
+        case FillMethod::RANDOM: {
             std::cout << "\nВведите минимальное значение: ";
             int min;
             std::cin >> min;
@@ -48,20 +55,20 @@ int main() {
             gen = new RandomGenerator(min, max);
             break;
         }
-        case 2: {
+        case FillMethod::MANUAL: {
             std::cout << "\nВы выбрали ввод вручную.\n";
             std::cout << "При заполнении массива введите " << n << " чисел.\n";
             gen = new IStreamGenerator(std::cin);
             break;
         }
-        case 3: {
+        case FillMethod::CONSTANT: {
             std::cout << "\nВведите константу для заполнения: ";
             int constant;
             std::cin >> constant;
             gen = new ConstantGenerator(constant);
             break;
         }
-        case 4: {
+        case FillMethod::ZEROS: {
             std::cout << "\nМассив будет заполнен нулями.\n";
             gen = new ZeroGenerator();
             break;
