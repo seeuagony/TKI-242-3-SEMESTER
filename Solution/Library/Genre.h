@@ -31,6 +31,12 @@ namespace miit::cinema
         std::string getName() const;
 
         /**
+         * @brief Установить название жанра
+         * @param name Название жанра
+         */
+        void setName(const std::string& name);
+        
+        /**
          * @brief Оператор сравнения
          * @param other Другой жанр
          * @return true если жанры равны

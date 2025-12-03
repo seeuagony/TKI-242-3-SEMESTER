@@ -15,6 +15,11 @@ namespace miit::cinema
         return name;
     }
 
+    void Genre::setName(const std::string& name)
+    {
+        this->name = name;
+    }
+
     bool Genre::operator==(const Genre& other) const
     {
         return name == other.name;
