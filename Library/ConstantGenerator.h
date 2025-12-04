@@ -23,6 +23,6 @@ namespace miit::algebra
          * @brief Возвращает константное значение
          * @return Всегда одно и то же число
          */
-        int generate() const override;
+        int generate() override;
     };
 }

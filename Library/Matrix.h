@@ -86,7 +86,7 @@ namespace miit::algebra {
          * @brief Заполняет массив значениями из генератора 
          * @param gen Генератор значений
          */
-        void fill(const Generator& gen);
+        void fill(Generator& gen);
 
         /**
          * @brief Заполняет массив значениями из генератора 
@@ -217,7 +217,7 @@ namespace miit::algebra {
     }
 
     template<typename T>
-    void Matrix<T>::fill(const Generator& gen)
+    void Matrix<T>::fill(Generator& gen)
     {
         for (size_t i = 0; i < size; i++) {
             data[i] = static_cast<T>(gen.generate());

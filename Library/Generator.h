@@ -14,6 +14,6 @@ namespace miit::algebra {
         /**
         @brief Виртуальная функция генерации значений
         */
-        virtual int generate() const = 0;
+        virtual int generate() = 0;
     };
 }
