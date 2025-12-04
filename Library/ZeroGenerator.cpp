@@ -2,7 +2,7 @@
 
 namespace miit::algebra
 {
-    int ZeroGenerator::generate()
+    int ZeroGenerator::generate() const
     {
         return 0;
     }

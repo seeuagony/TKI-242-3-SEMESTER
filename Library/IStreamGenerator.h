@@ -24,6 +24,6 @@ namespace miit::algebra
          * @brief Читает одно целое число из потока
          * @return Прочитанное число
          */
-        int generate() override;
+        int generate() const override;
     };
 }

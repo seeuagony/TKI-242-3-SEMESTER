@@ -6,7 +6,7 @@ namespace miit::algebra
     {
     }
     
-    int IStreamGenerator::generate()
+    int IStreamGenerator::generate() const
     {
         int value = 0;
         in >> value;

@@ -6,7 +6,7 @@ namespace miit::algebra
         : value{value}  // Инициализируем поле value переданным параметром
     {
     }
-    int ConstantGenerator::generate()
+    int ConstantGenerator::generate() const
     {
         return value;
     }

@@ -23,6 +23,6 @@ namespace miit::algebra {
          * @brief Генерирует случайное число в заданном диапазоне
          * @return Случайное число в диапазоне
          */
-        int generate() override;
+        int generate() const override;
     };
 }

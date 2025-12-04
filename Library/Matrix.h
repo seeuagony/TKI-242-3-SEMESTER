@@ -217,7 +217,7 @@ namespace miit::algebra {
     }
 
     template<typename T>
-    void Matrix<T>::fill(Generator& gen)
+    void Matrix<T>::fill(const Generator& gen)
     {
         for (size_t i = 0; i < size; i++) {
             data[i] = static_cast<T>(gen.generate());
