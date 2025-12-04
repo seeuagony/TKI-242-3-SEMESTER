@@ -25,7 +25,7 @@ namespace miit::algebra {
         /**
         @brief Конструктор с параметрами размера 
         */
-        explicit Matrix(size_t n);
+        explicit Matrix(const size_t n);
 
         /**
         @brief Копирующий конструктор 
@@ -61,14 +61,14 @@ namespace miit::algebra {
          * @param index Индекс элемента
          * @return Ссылка на элемент
          */
-        T& operator[](size_t index);
+        T& operator[](const size_t index);
 
          /**
          * @brief Доступ к элементу массива по индексу (только чтение)
          * @param index Индекс элемента
          * @return Константная ссылка на элемент
          */
-        const T& operator[](size_t index) const;
+        const T& operator[](const size_t index) const;
 
         /**
          * @brief Возвращает размер массива
@@ -86,18 +86,13 @@ namespace miit::algebra {
          * @brief Заполняет массив значениями из генератора 
          * @param gen Генератор значений
          */
-        void fill(Generator& gen);
+        void fill(const Generator& gen);
 
         /**
          * @brief Заполняет массив значениями из генератора 
          * @param gen Генератор значений
          */
-        void fill(Generator&& gen);
 
-        /**
-         * @brief Преобразует массив в строку для вывода
-         * @return представление массива как строки
-         */
         std::string toString() const;
 
          /**
@@ -223,14 +218,6 @@ namespace miit::algebra {
 
     template<typename T>
     void Matrix<T>::fill(Generator& gen)
-    {
-        for (size_t i = 0; i < size; i++) {
-            data[i] = static_cast<T>(gen.generate());
-        }
-    }
-
-    template<typename T>
-    void Matrix<T>::fill(Generator&& gen)
     {
         for (size_t i = 0; i < size; i++) {
             data[i] = static_cast<T>(gen.generate());
