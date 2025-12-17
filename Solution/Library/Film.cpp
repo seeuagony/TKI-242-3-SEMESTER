@@ -5,15 +5,9 @@ namespace miit::cinema {
 
 Film::Film() : title(""), genre(""), year(0), director(""), description(""), actors(), available_media() {}
 
-Film::Film(const std::string& title, const std::string& genre, int year, 
-           const std::string& director, const std::string& description)
-    : title(title), genre(genre), year(year), director(director), 
-      description(description), actors(), available_media() {}
+Film::Film(const std::string& title, const std::string& genre, int year, const std::string& director, const std::string& description) : title(title), genre(genre), year(year), director(director), description(description), actors(), available_media() {}
 
-Film::Film(const Film& other)
-    : title(other.title), genre(other.genre), year(other.year),
-      director(other.director), description(other.description),
-      actors(other.actors), available_media(other.available_media) {}
+Film::Film(const Film& other) : title(other.title), genre(other.genre), year(other.year), director(other.director), description(other.description), actors(other.actors), available_media(other.available_media) {}
 
 Film& Film::operator=(const Film& other) {
     if (this != &other) {
